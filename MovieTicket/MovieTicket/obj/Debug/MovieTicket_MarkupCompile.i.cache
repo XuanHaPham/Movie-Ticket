@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\App.xaml
-31812646779
+7-1972310827
 
-21152249104
+26-963565229
 165690834831
-LoginWindow.xaml;MainWindow.xaml;UserControlJaneto\ControlBarUC.xaml;
+FilmPage.xaml;HomePage.xaml;LoginPage.xaml;LoginWindow.xaml;MainWindow.xaml;SchedulePage.xaml;UserControlJaneto\ControlBarUC.xaml;
 
-False
+True
 

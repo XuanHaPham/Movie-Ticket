@@ -48,8 +48,10 @@ namespace MovieTicket.ViewModel
                 {
                     p = p.Parent as FrameworkElement;
                 }
-                MainWindow uw = new MainWindow();
-                uw.Show();
+                MainWindow mw = new MainWindow();
+                HomePageViewModel context = new HomePageViewModel();
+                mw.DataContext = context;
+                mw.Show();
                 Window w = p as Window;
                 w.Close();
             }

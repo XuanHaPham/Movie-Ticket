@@ -123,3 +123,11 @@ D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\bin\Debug\Microsoft
 D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\bin\Debug\System.Windows.Interactivity.dll
 D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\bin\Debug\Microsoft.Expression.Interactions.xml
 D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\bin\Debug\System.Windows.Interactivity.xml
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\FilmPage.g.cs
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\HomePage.g.cs
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\FilmPage.baml
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\HomePage.baml
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\LoginPage.g.cs
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\SchedulePage.g.cs
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\LoginPage.baml
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\SchedulePage.baml

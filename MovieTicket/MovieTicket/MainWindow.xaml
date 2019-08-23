@@ -20,16 +20,18 @@
         Name="loginWindow"
         BorderBrush="LightGray"
         BorderThickness="5"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="650">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <uc:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}" Loaded="ControlBarUC_Loaded"></uc:ControlBarUC>
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}" Loaded="ControlBarUC_Loaded" ></uc:ControlBarUC>
         </Grid>
-        <Separator Grid.ColumnSpan="1" Grid.Row="1" Height="3" Background="Gray" BorderBrush="Gray" />
+        <Grid Grid.Row="1" VerticalAlignment="Stretch">
+            <Frame Name="MainFrame"  Source="FilmPage.xaml" ></Frame>
+        </Grid>
+        
     </Grid>
 </Window>
