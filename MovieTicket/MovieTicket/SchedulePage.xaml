@@ -4,11 +4,64 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MovieTicket"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="650"
       Title="SchedulePage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0"  VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Image  Source=".\Image\79501.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill" />
+            </Grid>
+
+            <Grid Grid.Row="1" >
+                <materialDesign:Card Margin="10" Background="LightBlue">
+                    <TextBlock Height="50" HorizontalAlignment="Center" FontSize="25"  Text="Movie 1"
+                           Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold"   />
+                </materialDesign:Card>
+            </Grid>
+            <Grid Grid.Row="2" Height="400">
+                <TextBlock  HorizontalAlignment="Center" FontSize="16"  
+                                Text="Ngôi Nhà Bươm Bướm là bộ phim xoay quanh câu chuyện nên 
+                                duyên của Hoàng (Liên Bỉnh Phát) và Mai (Hoàng Yến Chibi). Bằng 
+                                sự khôn khéo và lém lĩnh, Mai đã thuyết phục được bố mẹ từ Bắc
+                                vào Nam để gặp gỡ và bàn chuyện cưới hỏi của cả hai. Mọi chuyện
+                                tưởng chừng sẽ rất êm đẹp cho đến khi cả hai bên gia đình đều bị 
+                                phơi bày những bí mậtcùng sự khác biệt về mọi mặt. Điều gì sẽ cứu 
+                                vãn được tình yêu nhiệt thành của tuổi trẻ và trao cho họ một cái kết
+                                đầy viên mãn?"
+                           Foreground="Black" VerticalAlignment="Center" Height="269" Margin="-2104,0"   />
+            </Grid>
+
+        </Grid>
+        <Separator Grid.Column="1" Width="10" Background="Black" />
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="317*"></RowDefinition>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="67*"></RowDefinition>
+                <RowDefinition Height="290*"/>
+                <RowDefinition Height="16*"/>
+            </Grid.RowDefinitions>
+            <materialDesign:Card Margin="5,5,5,0" Background="LightBlue">
+                <TextBlock Name="TextBlock1" Height="50" HorizontalAlignment="Center" FontSize="25"  Text="Movie 1"
+                           Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold"   />
+                
+            </materialDesign:Card>
+
+        </Grid>
     </Grid>
 </Page>
