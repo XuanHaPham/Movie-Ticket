@@ -14,6 +14,7 @@ namespace MovieTicket.DB
 
         public string TimeCreate { get; set; }
 
+        public string Image { get; set; }
         public bool? Status { get; set; }
 
         public virtual ICollection<Schedule> Schedules { get; set; }

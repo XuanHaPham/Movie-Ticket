@@ -131,3 +131,5 @@ D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\LoginPage
 D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\SchedulePage.g.cs
 D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\LoginPage.baml
 D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\SchedulePage.baml
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\BasketPage.g.cs
+D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\BasketPage.baml

@@ -201,6 +201,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BasketPage.xaml.cs">
+      <DependentUpon>BasketPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DB\Basket.cs" />
     <Compile Include="DB\DataProvider.cs" />
     <Compile Include="DB\Film.cs" />
@@ -230,6 +233,10 @@
     <Compile Include="ViewModel\HomePageViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Page Include="BasketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FilmPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -299,9 +306,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="Model\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\movies_banner_575x225.jpg" />
@@ -309,6 +313,9 @@
   <ItemGroup>
     <Resource Include="Image\220px-Nagraj_%28film_poster%29.jpg" />
     <Resource Include="Image\79501.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\cinema-movie-horizontal-banner-corn-cartoon-style-vector-13591211.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />

@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/220px-nagraj_(film_poster).jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/79501.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/cinema-movie-horizontal-banner-corn-cartoon-style-vector-13591211.jpg")]
 
 

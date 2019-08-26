@@ -9,7 +9,7 @@ namespace MovieTicket.DB
 
     public class Schedule : Entity<Guid>
     {
-        public int? FilmID { get; set; }
+        public string FilmID { get; set; }
 
         public string MovieDate { get; set; }
 
