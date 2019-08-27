@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieTicket.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,15 +24,17 @@ namespace MovieTicket
         public FilmPage()
         {
             InitializeComponent();
-            this.TvBox.ItemsSource = new MovieData[]
-        {
-            new MovieData{Title="Movie 1"},
-            new MovieData{Title="Movie 2"},
-            new MovieData{Title="Movie 3"},
-            new MovieData{Title="Movie 4"},
-            new MovieData{Title="Movie 5"},
-            new MovieData{Title="Movie 6"}
-        };
+            var vm = new FilmViewModel();
+            this.DataContext = vm;
+        //    this.List.ItemsSource = new MovieData[]
+        //{
+        //    new MovieData{Title="Movie 1"},
+        //    new MovieData{Title="Movie 2"},
+        //    new MovieData{Title="Movie 3"},
+        //    new MovieData{Title="Movie 4"},
+        //    new MovieData{Title="Movie 5"},
+        //    new MovieData{Title="Movie 6"}
+        //};
         }
         private BitmapImage LoadImage(string filename)
         {

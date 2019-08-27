@@ -13,16 +13,18 @@ namespace MovieTicket.ViewModel
     {
         #region
         public ICommand FilmCommand { get; set; }
+        public ICommand BasketCommand { get; set; }
+        public ICommand FoodCommand { get; set; }
+        public ICommand UserCommand { get; set; }
+
         #endregion
         public HomePageViewModel()
         {
-            FilmCommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { NavigateToFilmPage(); });
+            FilmCommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { MainWindow.MainWindowInstance.NavigationService.Navigate(new FilmPage()); });
+            BasketCommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { MainWindow.MainWindowInstance.NavigationService.Navigate(new BasketPage()); });
+            FoodCommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { MainWindow.MainWindowInstance.NavigationService.Navigate(new FoodPage()); });
+            UserCommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { MainWindow.MainWindowInstance.NavigationService.Navigate(new UserPage()); });
         }
 
-        private void NavigateToFilmPage()
-        {
-            FilmPage secPage = new FilmPage();
-            MainWindow.MainWindowInstance.NavigationService.Navigate(secPage);
-        }
     }
 }

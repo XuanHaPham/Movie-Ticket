@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\obj\Debug\
+D:\MovieTicket\Movie-Ticket\WPFApp\MovieTicket\MovieTicket\obj\Debug\
 MovieTicket
 none
 false
 DEBUG;TRACE
-D:\Training\MovieTicket\Movie-Ticket\MovieTicket\MovieTicket\App.xaml
-81485731359
+D:\MovieTicket\Movie-Ticket\WPFApp\MovieTicket\MovieTicket\App.xaml
+101956592422
 
-27-1820942155
-165690834831
-BasketPage.xaml;FilmPage.xaml;HomePage.xaml;LoginPage.xaml;LoginWindow.xaml;MainWindow.xaml;SchedulePage.xaml;UserControlJaneto\ControlBarUC.xaml;
+33-1210684920
+165-2050025049
+BasketPage.xaml;FilmPage.xaml;FoodPage.xaml;HomePage.xaml;LoginPage.xaml;LoginWindow.xaml;MainWindow.xaml;SchedulePage.xaml;UserControlJaneto\ControlBarUC.xaml;UserPage.xaml;
 
-False
+True
 

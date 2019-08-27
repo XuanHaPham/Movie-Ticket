@@ -30,7 +30,7 @@
             <uc:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}" Loaded="ControlBarUC_Loaded" ></uc:ControlBarUC>
         </Grid>
         <Grid Grid.Row="1" VerticalAlignment="Stretch">
-            <Frame Name="MainFrame"  Source="FilmPage.xaml" ></Frame>
+            <Frame Name="MainFrame"  Source="HomePage.xaml" ></Frame>
         </Grid>
         
     </Grid>

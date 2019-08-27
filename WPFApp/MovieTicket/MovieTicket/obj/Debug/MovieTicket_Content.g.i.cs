@@ -8,6 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/cinema-movie-horizontal-banner-corn-cartoon-style-vector-13591211.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/3.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/4.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/5.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/6.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/7.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/banner_2_f_and_d_1539262847.jpg")]
 
 

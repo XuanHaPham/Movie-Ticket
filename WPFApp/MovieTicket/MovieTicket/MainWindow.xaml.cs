@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieTicket.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,11 @@ namespace MovieTicket
     /// </summary>
     public  partial class MainWindow : Window
     {
-        public  MainWindow()
+        private  MainWindow()
         {
             InitializeComponent();
-            
+            var vm = new MainViewModel();
+            this.DataContext = vm;
             this.Loaded += MainWindow_Loaded;
 
         }

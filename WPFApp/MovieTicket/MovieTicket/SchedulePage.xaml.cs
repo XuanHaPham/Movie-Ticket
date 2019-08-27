@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MovieTicket.DB;
+using MovieTicket.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,11 @@ namespace MovieTicket
     /// </summary>
     public partial class SchedulePage : Page
     {
-        public SchedulePage()
+        public SchedulePage(Film film)
         {
             InitializeComponent();
+            var vm = new ScheduleViewModel(film);
+            this.DataContext = vm;
         }
     }
 }

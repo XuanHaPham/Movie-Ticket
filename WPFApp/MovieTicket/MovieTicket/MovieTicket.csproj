@@ -213,8 +213,12 @@
     <Compile Include="DB\MovieTicketDBContext.cs" />
     <Compile Include="DB\Schedule.cs" />
     <Compile Include="DB\User.cs" />
+    <Compile Include="DTO\BasketFilm.cs" />
     <Compile Include="FilmPage.xaml.cs">
       <DependentUpon>FilmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FoodPage.xaml.cs">
+      <DependentUpon>FoodPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -228,16 +232,26 @@
     <Compile Include="UserControlJaneto\ControlBarUC.xaml.cs">
       <DependentUpon>ControlBarUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\baseViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
+    <Compile Include="ViewModel\FilmViewModel.cs" />
+    <Compile Include="ViewModel\FoodViewModel.cs" />
     <Compile Include="ViewModel\HomePageViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ScheduleViewModel.cs" />
     <Page Include="BasketPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FilmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FoodPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -276,6 +290,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -305,7 +323,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
+    <Resource Include="Image\1.jpg" />
+    <Resource Include="Image\2.jpg" />
+    <Resource Include="Image\3.jpg" />
+    <Resource Include="Image\4.jpg" />
+    <Resource Include="Image\5.jpg" />
+    <Resource Include="Image\6.jpg" />
+    <Resource Include="Image\7.jpg" />
+    <Resource Include="Image\BANNER_2_F_and_D_1539262847.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\movies_banner_575x225.jpg" />
@@ -316,6 +341,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\cinema-movie-horizontal-banner-corn-cartoon-style-vector-13591211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\30MILES_EFM2019 WEBCopy_{f49912f8-3023-e911-944e-0ad9f5e1f797}.jpg" />
+    <Resource Include="Image\7aab8ab91d1cc2644365f7784a8e6215.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />

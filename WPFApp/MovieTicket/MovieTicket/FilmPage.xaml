@@ -19,7 +19,7 @@
         </Grid>
         <materialDesign:Card Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <ScrollViewer VerticalScrollBarVisibility="Auto" >
-                <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <!--<ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" ItemsSource="{Binding List}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="4" HorizontalAlignment="Stretch"/>
@@ -31,6 +31,21 @@
                                 <Image Source=".\Image\79501.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill" />
                                 <TextBlock Text="{Binding Title}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
                                 
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+                <ListView ItemsSource="{Binding List, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="4" HorizontalAlignment="Stretch"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Vertical" Height="220" Width="120">
+                                <Image Source="{Binding Image}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill"  ToolTip="{Binding Description}"/>
+                                <TextBlock Text="{Binding Title}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

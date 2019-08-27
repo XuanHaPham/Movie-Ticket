@@ -22,26 +22,19 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Image  Source=".\Image\79501.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill" />
+                <Image  Source="{Binding film.Image}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill" />
             </Grid>
 
             <Grid Grid.Row="1" >
                 <materialDesign:Card Margin="10" Background="LightBlue">
-                    <TextBlock Height="50" HorizontalAlignment="Center" FontSize="25"  Text="Movie 1"
+                    <TextBlock Height="50" HorizontalAlignment="Center" FontSize="25"  Text="Content"
                            Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold"   />
                 </materialDesign:Card>
             </Grid>
             <Grid Grid.Row="2" Height="400" >
                 <TextBlock Width="180"  HorizontalAlignment="Center" FontSize="16" TextWrapping="Wrap"
-                           ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                Text="Ngôi Nhà Bươm Bướm là bộ phim xoay quanh câu chuyện nên 
-                                duyên của Hoàng (Liên Bỉnh Phát) và Mai (Hoàng Yến Chibi). Bằng 
-                                sự khôn khéo và lém lĩnh, Mai đã thuyết phục được bố mẹ từ Bắc
-                                vào Nam để gặp gỡ và bàn chuyện cưới hỏi của cả hai. Mọi chuyện
-                                tưởng chừng sẽ rất êm đẹp cho đến khi cả hai bên gia đình đều bị 
-                                phơi bày những bí mậtcùng sự khác biệt về mọi mặt. Điều gì sẽ cứu 
-                                vãn được tình yêu nhiệt thành của tuổi trẻ và trao cho họ một cái kết
-                                đầy viên mãn?"
+                           ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                Text="{Binding film.Description}"
                            Foreground="Black" VerticalAlignment="Center" Height="355" Margin="10,10,10,35"   />
             </Grid>
 
@@ -54,7 +47,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <materialDesign:Card Grid.Row="0" Margin="5,5,5,0" Background="LightBlue">
-                <TextBlock Name="TextBlock1" Height="50" HorizontalAlignment="Center" FontSize="25"  Text="Movie 1"
+                <TextBlock  Height="50" HorizontalAlignment="Center" FontSize="25"  Text="{Binding film.Title}"
                            Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold"   />
             </materialDesign:Card>
             <materialDesign:Card Grid.Row="1" Margin="5" Height="80">
@@ -68,31 +61,50 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>    
+                            <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        <materialDesign:PackIcon VerticalAlignment="Center" Width="40" Height="40"  Kind="PlusCircle" Grid.Column="0"  />
-                        <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="10" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
-                        <materialDesign:PackIcon VerticalAlignment="Center" Width="40" Height="40"  Kind="MinusCircle" Grid.Column="2"  />
-                    </Grid> 
+                        <Button Background="Transparent" Height="40">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
+                        </Button>
+                         <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="{Binding TicketCounter}" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
+                        <Button Background="Transparent" Height="40"  Grid.Column="2">
+                            <materialDesign:PackIcon VerticalAlignment="Center"  Width="30" Height="30" Foreground="Red"  Kind="MinusCircle"  />
+                        </Button>
+                        
+                    </Grid>
                 </Grid>
             </materialDesign:Card>
-            <materialDesign:Card Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" >
-                    <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>                                        
-                                <UniformGrid Columns="4" HorizontalAlignment="Stretch"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollViewer>
-
-            </materialDesign:Card>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView ItemsSource="{Binding ListSchedule, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" MinHeight="300">
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <materialDesign:Card Width="400" Height="60" >
+                                <Grid Height="60">
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock  FontSize="20"   Text="{Binding MovieTime}" Margin="5" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana"   />
+                                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding PlussCommand}">
+                                            <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
+                                        </Button>
+                                        <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="{Binding Stock}" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
+                                        <Button Background="Transparent" Height="40"  Grid.Column="2" BorderBrush="Transparent" BorderThickness="0" Command="{Binding MinusCommand}">
+                                            <materialDesign:PackIcon VerticalAlignment="Center"  Width="30" Height="30" Foreground="Red"  Kind="MinusCircle"  />
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+                            </materialDesign:Card>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

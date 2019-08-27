@@ -24,7 +24,6 @@ namespace MovieTicket.ViewModel
         #endregion
         public LoginViewModel()
         {
-            InsertData();
             LoginIcommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { CheckLogin(p); });
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
             CloseLoginIcommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { CloseLoginWindow(p); });
@@ -55,7 +54,7 @@ namespace MovieTicket.ViewModel
                 {
                     p = p.Parent as FrameworkElement;
                 }
-                MainWindow mw = new MainWindow();
+                MainWindow mw = MainWindow.MainWindowInstance;
                 HomePageViewModel context = new HomePageViewModel();
                 mw.DataContext = context;
                 mw.Show();
@@ -91,7 +90,7 @@ namespace MovieTicket.ViewModel
         {
             for(int i =0; i <=10; i++)
             {
-                Film f = new Film() { Active = true, Deleted = false,
+                Film f = new Film() { Active = true, Deleted = false, Title = "Movie " + i, Status = true,TimeCreate = "27/8/2019",
                     Description = "Movie" + i, Id = Guid.NewGuid(), Image= "220px-Nagraj_(film_poster).jpg"};
                 DataProvider.ins.DB.Films.Add(f);
                 for(int j = 0; j <= 4; j++)
@@ -100,6 +99,24 @@ namespace MovieTicket.ViewModel
                         Film = f, MovieDate= "26/8/2019",MovieTime= (6+j)+"h - " + (8+j)+"h", Status= true, FilmID = f.Id.ToString()};
                     DataProvider.ins.DB.Schedules.Add(s);
                 }
+            }
+            DataProvider.ins.DB.SaveChanges();
+
+        }
+        private void InsertFood()
+        {
+            for (int i = 0; i <= 6; i++)
+            {
+                Food food = new Food() {
+                    Active = true,
+                    Deleted= false,
+                    Image ="" + i,
+                    Id = Guid.NewGuid(),
+                    Name = "Combo " + i,
+                    Price = i*2,
+                    Status= "active"
+                };
+                DataProvider.ins.DB.Foods.Add(food);
             }
             DataProvider.ins.DB.SaveChanges();
 
