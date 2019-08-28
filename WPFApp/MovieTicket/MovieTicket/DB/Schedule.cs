@@ -15,7 +15,7 @@ namespace MovieTicket.DB
 
         public string MovieTime { get; set; }
 
-        public int? Stock { get; set; }
+        public int Stock { get; set; }
 
         public bool? Status { get; set; }
 

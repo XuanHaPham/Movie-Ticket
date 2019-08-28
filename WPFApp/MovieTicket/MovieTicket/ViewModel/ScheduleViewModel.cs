@@ -23,6 +23,8 @@ namespace MovieTicket.ViewModel
         private string _TicketCounter;
         public string TicketCounter { get => _TicketCounter; set { _TicketCounter = value; OnPropertyChanged(); } }
 
+        private Guid _CurrentId;
+        public Guid CurrentId { get => _CurrentId; set { _CurrentId = value; OnPropertyChanged(); } }
         private Schedule _SelectedItem;
 
         public Schedule SelectedItem
@@ -40,14 +42,33 @@ namespace MovieTicket.ViewModel
         {
             film = f;
             ListSchedule = new ObservableCollection<Schedule>(DataProvider.ins.DB.Schedules.AsEnumerable().Where(p=> p.FilmID == film.Id.ToString()));
-            
+            foreach (var item in ListSchedule)
+            {
+                item.Stock = 0;
+            }
+            PlusCommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { addSticket(); });
+            MinusCommand = new RelayCommand<FrameworkElement>((p) => { return true; }, (p) => { minusSticket(); });
         }
 
-        private void addNewProduct(FrameworkElement s)
+        private void addSticket()
         {
-           
-        }
+            Schedule currentSchedule = ListSchedule.Where(p => p.Id == CurrentId).FirstOrDefault();
+            int currentStock = DataProvider.ins.DB.Schedules.AsEnumerable().Where(p => p.Id == CurrentId).FirstOrDefault().Stock;
+            if (currentSchedule != null && currentSchedule.Stock < currentStock)
+            {
+                ListSchedule.Where(p => p.Id == SelectedItem.Id).FirstOrDefault().Stock++;
+            }
 
+        }
+        private void minusSticket()
+        {
+            Schedule currentSchedule = ListSchedule.Where(p => p.Id == CurrentId).FirstOrDefault();
+            if (currentSchedule != null && currentSchedule.Stock >0)
+            {
+                ListSchedule.Where(p => p.Id == CurrentId).FirstOrDefault().Stock--;
+            }
+
+        }
 
     }
 }

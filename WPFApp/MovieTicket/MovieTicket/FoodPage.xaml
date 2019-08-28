@@ -43,11 +43,12 @@
                     </ItemsControl.ItemsPanel>
                     <ListView.ItemTemplate>
                         <DataTemplate >
-                            <StackPanel Orientation="Vertical" Height="200" Width="200">
-                                <Image Source="{Binding Image} " HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill"  ToolTip="{Binding Description}"/>
+                            <StackPanel Orientation="Vertical" Height="auto" Width="200">
+                                <!--<Image Source="{Binding Image}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill"  />-->
+                                <Image Source="{Binding Image}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill" />
                                 <TextBlock Text="{Binding Name}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Path=Price,StringFormat=' $ :{0}'}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"  Foreground="Red"/>
+                                    <TextBlock Text="{Binding Path=Price,StringFormat=' {0} $'}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"  Foreground="Red"/>
                                     <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding PlussCommand}">
                                         <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
                                     </Button>

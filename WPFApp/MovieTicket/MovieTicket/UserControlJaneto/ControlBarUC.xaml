@@ -34,8 +34,14 @@
                     </Button>
                 </StackPanel>
                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
-                    <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
-                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0" Text="{Binding Tag, ElementName=ucControlBar}"></TextBlock>
+                    <Button Command="{Binding HomeCommand}" 
+                            BorderBrush="Transparent"
+                            BorderThickness="0" Height="auto" 
+                            CommandParameter="{Binding ElementName=ucControlBar}"
+                            ToolBar.OverflowMode="AsNeeded" 
+                            Background="Transparent">
+                        <materialDesign:PackIcon Kind="Home" />
+                    </Button>
                 </StackPanel>
             </DockPanel>
         </materialDesign:ColorZone>

@@ -16,9 +16,13 @@ namespace MovieTicket.ViewModel
         public ICommand MaximizeWindowCommand { get; set; }
         public ICommand MinimizeWindowCommand { get; set; }
         public ICommand MouseMoveWindowCommand { get; set; }
+        public ICommand HomeCommand { get; set; }
         #endregion
         public ControlBarViewModel()
         {
+            HomeCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; },
+                (p) => { MainWindow.MainWindowInstance.NavigationService.Navigate(new HomePage()); });
+
             CloseWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; },
                 (p) => {
                     var w = getUserParent(p) as Window;
