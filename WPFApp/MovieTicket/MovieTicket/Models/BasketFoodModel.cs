@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieTicket.DTO
+namespace MovieTicket.Models
 {
-    public class BasketFilm
+    public class BasketFoodModel
     {
-        public Schedule schedule { get; set; }
-        public int Number { get; set; }
+        public Food food { get; set; }
+        public int number { get; set; }
     }
 }

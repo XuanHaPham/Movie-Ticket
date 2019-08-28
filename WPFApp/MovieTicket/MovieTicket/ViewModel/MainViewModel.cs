@@ -1,4 +1,4 @@
-﻿using MovieTicket.DTO;
+﻿using MovieTicket.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,16 +10,6 @@ namespace MovieTicket.ViewModel
 {
     public class MainViewModel: BaseViewModel
     {
-        private ObservableCollection<BasketFilm> _basketFilms;
-
-        public ObservableCollection<BasketFilm> basketFilms { get => _basketFilms; set { _basketFilms = value; OnPropertyChanged(); } }
-
-        public MainViewModel()
-        {
-            if(basketFilms == null)
-            {
-                basketFilms = new ObservableCollection<BasketFilm>();
-            }
-        }
+        
     }
 }

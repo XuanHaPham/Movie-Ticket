@@ -42,6 +42,14 @@
                             Background="Transparent">
                         <materialDesign:PackIcon Kind="Home" />
                     </Button>
+                    <Button Command="{Binding BasketCommand}" 
+                            BorderBrush="Transparent"
+                            BorderThickness="0" Height="auto" 
+                            CommandParameter="{Binding ElementName=ucControlBar}"
+                            ToolBar.OverflowMode="AsNeeded" 
+                            Background="Transparent">
+                        <materialDesign:PackIcon Kind="Basket" />
+                    </Button>
                 </StackPanel>
             </DockPanel>
         </materialDesign:ColorZone>

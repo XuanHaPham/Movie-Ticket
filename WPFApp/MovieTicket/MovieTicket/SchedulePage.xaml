@@ -43,39 +43,14 @@
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition/>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <materialDesign:Card Grid.Row="0" Margin="5,5,5,0" Background="LightBlue">
                 <TextBlock  Height="50" HorizontalAlignment="Center" FontSize="25"  Text="{Binding film.Title}"
                            Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold"   />
             </materialDesign:Card>
-            <materialDesign:Card Grid.Row="1" Margin="5" Height="80">
-                <Grid >
-                    <Grid.ColumnDefinitions >
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock  FontSize="20"   Text="10h00 - 20h00" Margin="5" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana"   />
-                    <Grid Grid.Column="1" HorizontalAlignment="Right">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Button Background="Transparent" Height="40" Command="{Binding DataContext.PlussCommand, ElementName=LayoutRoot}">
-                            <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
-                        </Button>
-                         <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="{Binding TicketCounter}" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
-                        <Button Background="Transparent" Height="40"  Grid.Column="2" >
-                            <materialDesign:PackIcon VerticalAlignment="Center"  Width="30" Height="30" Foreground="Red"  Kind="MinusCircle"  />
-                        </Button>
-                        
-                    </Grid>
-                </Grid>
-            </materialDesign:Card>
-            <ScrollViewer x:Name="LayoutRoot" VerticalScrollBarVisibility="Auto" Grid.Row="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <ListView ItemsSource="{Binding ListSchedule, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" MinHeight="300">
+            <ScrollViewer x:Name="LayoutRoot" VerticalScrollBarVisibility="Auto" Grid.Row="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView ItemsSource="{Binding SourceCollection}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" MinHeight="300">
                     <ListView.ItemTemplate >
                         <DataTemplate >
                             <materialDesign:Card Width="400" Height="60" >
@@ -91,11 +66,11 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding DataContext.PlusCommand, ElementName=LayoutRoot}" CommandParameter="{Binding ElementName=Id, Path=CurrentId}">
+                                        <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding ElementName=LayoutRoot, Path=DataContext.PlusCommand}" CommandParameter="{Binding Id}">
                                             <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
                                         </Button>
                                         <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="{Binding Stock}" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
-                                        <Button Background="Transparent" Height="40"  Grid.Column="2" BorderBrush="Transparent" BorderThickness="0" Command="{Binding DataContext.MinusCommand, ElementName=LayoutRoot}" CommandParameter="{Binding ElementName=Id, Path=CurrentId}">
+                                        <Button Background="Transparent" Height="40"  Grid.Column="2" BorderBrush="Transparent" BorderThickness="0" Command="{Binding DataContext.MinusCommand, ElementName=LayoutRoot}" CommandParameter="{Binding Id}">
                                             <materialDesign:PackIcon VerticalAlignment="Center"  Width="30" Height="30" Foreground="Red"  Kind="MinusCircle"  />
                                         </Button>
                                     </Grid>

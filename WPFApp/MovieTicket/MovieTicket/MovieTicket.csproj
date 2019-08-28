@@ -213,7 +213,6 @@
     <Compile Include="DB\MovieTicketDBContext.cs" />
     <Compile Include="DB\Schedule.cs" />
     <Compile Include="DB\User.cs" />
-    <Compile Include="DTO\BasketFilm.cs" />
     <Compile Include="FilmPage.xaml.cs">
       <DependentUpon>FilmPage.xaml</DependentUpon>
     </Compile>
@@ -226,6 +225,9 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\BasketFoodModel.cs" />
+    <Compile Include="Models\ScheduleModel.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="SchedulePage.xaml.cs">
       <DependentUpon>SchedulePage.xaml</DependentUpon>
     </Compile>
@@ -235,7 +237,9 @@
     <Compile Include="UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\GlobalData.cs" />
     <Compile Include="ViewModel\baseViewModel.cs" />
+    <Compile Include="ViewModel\BasketViewModel.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\FilmViewModel.cs" />
     <Compile Include="ViewModel\FoodViewModel.cs" />

@@ -44,15 +44,14 @@
                     <ListView.ItemTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Vertical" Height="auto" Width="200">
-                                <!--<Image Source="{Binding Image}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill"  />-->
                                 <Image Source="{Binding Image}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="Fill" />
                                 <TextBlock Text="{Binding Name}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Path=Price,StringFormat=' {0} $'}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"  Foreground="Red"/>
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Text="{Binding Path=Price,StringFormat=' {0} $'}" HorizontalAlignment="Stretch" FontSize="20"  VerticalAlignment="Center"  Foreground="Red"/>
                                     <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding PlussCommand}">
                                         <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
                                     </Button>
-                                    <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="3" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
+                                    <TextBlock Grid.Column="1" FontSize="20"   Text="3" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
                                     <Button Background="Transparent" Height="40"  Grid.Column="2" BorderBrush="Transparent" BorderThickness="0" Command="{Binding MinusCommand}">
                                         <materialDesign:PackIcon VerticalAlignment="Center"  Width="30" Height="30" Foreground="Red"  Kind="MinusCircle"  />
                                     </Button>
@@ -62,7 +61,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollViewer>
-
         </materialDesign:Card>
     </Grid>
 </Page>

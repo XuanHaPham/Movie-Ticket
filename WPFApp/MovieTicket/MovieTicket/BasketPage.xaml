@@ -13,60 +13,37 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="500"/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <materialDesign:Card Grid.Row="0" Height="50" Margin="0,-5,10,0" Background="LightBlue">
             <TextBlock Name="TextBlock1"  HorizontalAlignment="Center" FontSize="25"  Text="Your Basket"
                            Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold"   />
         </materialDesign:Card>
-        <materialDesign:Card Grid.Row="1" Margin="5" Height="80">
-            <Grid >
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock  FontSize="20"   Text="Movie 1" Margin="5" Foreground="Black" VerticalAlignment="top" FontFamily="Verdana"   />
-                <TextBlock  FontSize="20"   Text="10h00 - 20h00" Margin="5" Foreground="Black" VerticalAlignment="Bottom" FontFamily="Verdana"   />
-                <Grid Grid.Column="1" HorizontalAlignment="Right">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding PlussCommand}">
-                        <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
-                    </Button>
-                    <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="10" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
-                    <Button Background="Transparent" Height="40"  Grid.Column="2" BorderBrush="Transparent" BorderThickness="0" Command="{Binding MinusCommand}">
-                        <materialDesign:PackIcon VerticalAlignment="Center"  Width="30" Height="30" Foreground="Red"  Kind="MinusCircle"  />
-                    </Button>
-                </Grid>
-            </Grid>
-        </materialDesign:Card>
-        <materialDesign:Card Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <ListView ItemsSource="{Binding ListSchedule, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" MinHeight="300">
+        <materialDesign:Card Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ScrollViewer x:Name="LayoutRoot" VerticalScrollBarVisibility="Auto" Grid.Row="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView ItemsSource="{Binding SourceCollection}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" MinHeight="300">
                     <ListView.ItemTemplate >
                         <DataTemplate >
-                            <materialDesign:Card Width="400" Height="60" >
-                                <Grid Height="60">
+                            <materialDesign:Card HorizontalAlignment="Stretch" Height="60" >
+                                <Grid Height="60" HorizontalAlignment="Stretch">
                                     <Grid.ColumnDefinitions >
                                         <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock  FontSize="20"   Text="{Binding MovieTime}" Margin="5" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana"   />
+                                    <TextBlock Grid.Column="0" FontSize="18"   Text="{Binding Film.Title}" Margin="5" Foreground="Black" VerticalAlignment="Top" FontFamily="Verdana"   />
+                                    <TextBlock Grid.Column="0" FontSize="20"   Text="{Binding MovieTime}" Margin="5" Foreground="Black" VerticalAlignment="Bottom" FontFamily="Verdana"   />
                                     <Grid Grid.Column="1" HorizontalAlignment="Right">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
-                                        <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding PlussCommand}">
+                                        <Button Background="Transparent" Height="40" BorderBrush="Transparent" BorderThickness="0" Command="{Binding ElementName=LayoutRoot, Path=DataContext.PlusCommand}" CommandParameter="{Binding Id}">
                                             <materialDesign:PackIcon VerticalAlignment="Center" Width="30" Height="30" Foreground="Green"  Kind="PlusCircle" Grid.Column="0"  />
                                         </Button>
                                         <TextBlock Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  Text="{Binding Stock}" Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" Margin="5" />
-                                        <Button Background="Transparent" Height="40"  Grid.Column="2" BorderBrush="Transparent" BorderThickness="0" Command="{Binding MinusCommand}">
+                                        <Button Background="Transparent" Height="40"  Grid.Column="2" BorderBrush="Transparent" BorderThickness="0" Command="{Binding DataContext.MinusCommand, ElementName=LayoutRoot}" CommandParameter="{Binding Id}">
                                             <materialDesign:PackIcon VerticalAlignment="Center"  Width="30" Height="30" Foreground="Red"  Kind="MinusCircle"  />
                                         </Button>
                                     </Grid>
@@ -77,13 +54,17 @@
                 </ListView>
             </ScrollViewer>
         </materialDesign:Card>
+        <materialDesign:Card Grid.Row="2" >
+            <TextBlock  HorizontalAlignment="Center" FontSize="25"  Text="{Binding Path=Total,StringFormat='Total : {0} $'}"
+                           Foreground="Black" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold"   />
+        </materialDesign:Card>
         <materialDesign:Card Grid.Row="3" Margin="5,10,5,0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition ></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Command="{Binding UnitCommand}" Width="100" Height="50" Background="Green" Grid.Column="0" HorizontalAlignment="Right">
+                <Button Command="{Binding BuyCommand}" Width="100" Height="50" Background="Green" Grid.Column="0" HorizontalAlignment="Right">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
@@ -97,7 +78,7 @@
                         </Grid>
                     </Grid>
                 </Button>
-                <Button Command="{Binding UnitCommand}" Width="100" Height="50" Background="Red" Grid.Column="1" HorizontalAlignment="Center">
+                <Button Command="{Binding ClearCommand}" Width="120" Height="50" Background="Red" Grid.Column="1" HorizontalAlignment="Center">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
@@ -107,7 +88,7 @@
                             <TextBlock Text="Clear basket" HorizontalAlignment="Center"></TextBlock>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <materialDesign:PackIcon Width="24" Height="24"  HorizontalAlignment="Center"  Kind="Receipt" />
+                            <materialDesign:PackIcon Width="30" Height="24"  HorizontalAlignment="Center"  Kind="Receipt" />
                         </Grid>
                     </Grid>
                 </Button>

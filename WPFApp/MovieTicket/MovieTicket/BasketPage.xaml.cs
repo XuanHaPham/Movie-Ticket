@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieTicket.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace MovieTicket
         public BasketPage()
         {
             InitializeComponent();
+            var vm = new BasketViewModel();
+            this.DataContext = vm;
         }
     }
 }
